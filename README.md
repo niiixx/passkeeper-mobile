@@ -1,6 +1,6 @@
 # pass_app
 
-A new Flutter project.
+Simple android and ios app to keep ur passwords
 
 ## Getting Started
 
