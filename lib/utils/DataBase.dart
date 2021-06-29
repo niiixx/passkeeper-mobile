@@ -174,6 +174,22 @@ class DBProvider {
         ]);
   }
 
+  Future<void> updateUsuario(
+      Usuarios usuarioAntiguo, Usuarios usuarioNuevo) async {
+    // Update cuenta
+    final db = await database;
+    await db.rawQuery(
+        'update usuarios SET usuario = ?, pass = ?, key = ? where usuario = ? and pass = ? and key = ?',
+        [
+          usuarioNuevo.getusuario(),
+          usuarioNuevo.getpassword(),
+          usuarioNuevo.getkey(),
+          usuarioAntiguo.getusuario(),
+          usuarioAntiguo.getpassword(),
+          usuarioAntiguo.getkey(),
+        ]);
+  }
+
   Future<void> deleteUser() async {
     // Eliminar usuarifer
     final db = await database;
